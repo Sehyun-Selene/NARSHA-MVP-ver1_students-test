@@ -1,5 +1,5 @@
 // Based on Cohen, Oxford & Chi Learning Style Survey
-// Parts 1, 3, 4, 5, 7, 8 (46 questions total)
+// Parts 1, 3, 4, 5, 7, 8 (40 questions total)
 
 export interface SurveyQuestion {
   id: string;

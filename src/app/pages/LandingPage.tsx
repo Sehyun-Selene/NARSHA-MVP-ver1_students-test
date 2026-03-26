@@ -30,7 +30,7 @@ export default function LandingPage() {
             </div>
             <h3 className="text-xl font-semibold mb-3">맞춤형 추천</h3>
             <p className="text-gray-600">
-              46개 문항의 학습 유형 검사를 통해 당신에게 가장 적합한 학습 자원을 추천해드립니다.
+              40개 문항의 학습 유형 검사를 통해 당신에게 가장 적합한 학습 자원을 추천해드립니다.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function LandingPage() {
                 2
               </div>
               <h4 className="font-semibold mb-2">학습 유형 검사</h4>
-              <p className="text-sm text-gray-600">46개 문항으로 당신의 학습 스타일 파악</p>
+              <p className="text-sm text-gray-600">40개 문항으로 당신의 학습 스타일 파악</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
