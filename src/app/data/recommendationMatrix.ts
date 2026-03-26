@@ -1,0 +1,238 @@
+import { OnboardingData } from '../types';
+
+// Recommendation matrix based on PRD Section 4
+export interface RecommendationEntry {
+  type: 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+  level: 'beginner' | 'elementary' | 'intermediate' | 'advanced';
+  first: string;
+  second: string;
+  third: string;
+  reasonKo: string;
+  reasonEn: string;
+}
+
+export const recommendationMatrix: RecommendationEntry[] = [
+  // Beginner Level
+  {
+    type: 'B',
+    level: 'beginner',
+    first: 'lingodeer',
+    second: 'ttmik-textbook',
+    third: 'anki',
+    reasonKo: '문법 체계를 먼저 잡고, 교재로 보완 후 Anki로 어휘 고정',
+    reasonEn: 'Establish grammar system first, supplement with textbook, then solidify vocabulary with Anki',
+  },
+  {
+    type: 'A',
+    level: 'beginner',
+    first: 'duolingo',
+    second: 'ttmik-textbook',
+    third: 'memrise',
+    reasonKo: '게임형 맥락 노출로 시작, 기초 문법은 교재로 보조',
+    reasonEn: 'Start with game-based contextual exposure, supplement basics with textbook',
+  },
+  {
+    type: 'D',
+    level: 'beginner',
+    first: 'king-sejong',
+    second: 'ttmik-podcast',
+    third: 'anki',
+    reasonKo: '체계적 발음·문형 먼저, 귀 훈련 병행 후 어휘 암기',
+    reasonEn: 'Systematic pronunciation and patterns first, parallel ear training, then vocabulary memorization',
+  },
+  {
+    type: 'C',
+    level: 'beginner',
+    first: 'ttmik-podcast',
+    second: 'duolingo',
+    third: 'memrise',
+    reasonKo: '귀로 자연 노출 시작, 게임형으로 동기 유지',
+    reasonEn: 'Start with natural auditory exposure, maintain motivation with gamification',
+  },
+  {
+    type: 'F',
+    level: 'beginner',
+    first: 'lingodeer',
+    second: 'king-sejong',
+    third: 'anki',
+    reasonKo: '다채널 구조 학습, 교재+앱 병행으로 기초 탄탄히',
+    reasonEn: 'Multi-channel structured learning, solid foundation with textbook and app',
+  },
+  {
+    type: 'E',
+    level: 'beginner',
+    first: 'duolingo',
+    second: 'ttmik-podcast',
+    third: 'memrise',
+    reasonKo: '시청각 맥락 노출, 게임+오디오로 자연 흡수',
+    reasonEn: 'Audiovisual contextual exposure, natural absorption with games and audio',
+  },
+
+  // Elementary Level
+  {
+    type: 'B',
+    level: 'elementary',
+    first: 'ttmik-textbook',
+    second: 'anki',
+    third: 'lingodeer',
+    reasonKo: '문법 심화 + 어휘 체계화, 부족한 분야는 LingoDeer로',
+    reasonEn: 'Deepen grammar and systematize vocabulary, fill gaps with LingoDeer',
+  },
+  {
+    type: 'A',
+    level: 'elementary',
+    first: 'teuida',
+    second: 'duolingo',
+    third: 'ttmik-textbook',
+    reasonKo: '드라마 클립으로 실제 맥락 노출, 교재로 문법 보완',
+    reasonEn: 'Real context exposure through drama clips, supplement grammar with textbook',
+  },
+  {
+    type: 'D',
+    level: 'elementary',
+    first: 'ttmik-podcast',
+    second: 'king-sejong',
+    third: 'anki',
+    reasonKo: '청각 심화 + 체계 보강, Anki로 어휘 고정',
+    reasonEn: 'Deepen auditory skills and reinforce structure, solidify vocabulary with Anki',
+  },
+  {
+    type: 'C',
+    level: 'elementary',
+    first: 'ttmik-podcast',
+    second: 'teuida',
+    third: 'memrise',
+    reasonKo: '대화·드라마 노출 강화, 구어 어휘 자연 습득',
+    reasonEn: 'Strengthen dialogue and drama exposure, naturally acquire colloquial vocabulary',
+  },
+  {
+    type: 'F',
+    level: 'elementary',
+    first: 'ttmik-textbook',
+    second: 'king-sejong',
+    third: 'anki',
+    reasonKo: '다채널 체계 학습으로 기초 완성',
+    reasonEn: 'Complete foundation with multi-channel systematic learning',
+  },
+  {
+    type: 'E',
+    level: 'elementary',
+    first: 'teuida',
+    second: 'ttmik-podcast',
+    third: 'memrise',
+    reasonKo: '영상+오디오 맥락 집중, 실제 회화 감각 키우기',
+    reasonEn: 'Focus on video and audio context, develop real conversation sense',
+  },
+
+  // Intermediate Level
+  {
+    type: 'B',
+    level: 'intermediate',
+    first: 'anki',
+    second: 'ttmik-textbook',
+    third: 'king-sejong',
+    reasonKo: '어휘·문법 심화 체계화, TOPIK 대비 병행 가능',
+    reasonEn: 'Systematize advanced vocabulary and grammar, can prepare for TOPIK in parallel',
+  },
+  {
+    type: 'A',
+    level: 'intermediate',
+    first: 'teuida',
+    second: 'memrise',
+    third: 'ttmik-textbook',
+    reasonKo: '드라마 맥락으로 고급 어휘 흡수, 교재로 틈 보완',
+    reasonEn: 'Absorb advanced vocabulary through drama context, fill gaps with textbook',
+  },
+  {
+    type: 'D',
+    level: 'intermediate',
+    first: 'ttmik-podcast',
+    second: 'anki',
+    third: 'king-sejong',
+    reasonKo: '청각 고급화 + 어휘·문법 체계 마무리',
+    reasonEn: 'Advance auditory skills and finalize vocabulary and grammar system',
+  },
+  {
+    type: 'C',
+    level: 'intermediate',
+    first: 'ttmik-podcast',
+    second: 'teuida',
+    third: 'memrise',
+    reasonKo: '자연스러운 고급 한국어 노출, 구어 fluency 목표',
+    reasonEn: 'Natural exposure to advanced Korean, target colloquial fluency',
+  },
+  {
+    type: 'F',
+    level: 'intermediate',
+    first: 'anki',
+    second: 'ttmik-textbook',
+    third: 'king-sejong',
+    reasonKo: '체계적 어휘·문법 총정리',
+    reasonEn: 'Comprehensive systematization of vocabulary and grammar',
+  },
+  {
+    type: 'E',
+    level: 'intermediate',
+    first: 'teuida',
+    second: 'ttmik-podcast',
+    third: 'memrise',
+    reasonKo: '다채널 고급 맥락 노출, 실전 한국어 fluency',
+    reasonEn: 'Multi-channel advanced context exposure, practical Korean fluency',
+  },
+
+  // Advanced Level
+  {
+    type: 'B',
+    level: 'advanced',
+    first: 'anki',
+    second: 'ttmik-textbook',
+    third: 'king-sejong',
+    reasonKo: '어휘·문법 심화 체계화, TOPIK 대비 병행 가능',
+    reasonEn: 'Systematize advanced vocabulary and grammar, can prepare for TOPIK in parallel',
+  },
+  {
+    type: 'A',
+    level: 'advanced',
+    first: 'teuida',
+    second: 'memrise',
+    third: 'ttmik-textbook',
+    reasonKo: '드라마 맥락으로 고급 어휘 흡수, 교재로 틈 보완',
+    reasonEn: 'Absorb advanced vocabulary through drama context, fill gaps with textbook',
+  },
+  {
+    type: 'D',
+    level: 'advanced',
+    first: 'ttmik-podcast',
+    second: 'anki',
+    third: 'king-sejong',
+    reasonKo: '청각 고급화 + 어휘·문법 체계 마무리',
+    reasonEn: 'Advance auditory skills and finalize vocabulary and grammar system',
+  },
+  {
+    type: 'C',
+    level: 'advanced',
+    first: 'ttmik-podcast',
+    second: 'teuida',
+    third: 'memrise',
+    reasonKo: '자연스러운 고급 한국어 노출, 구어 fluency 목표',
+    reasonEn: 'Natural exposure to advanced Korean, target colloquial fluency',
+  },
+  {
+    type: 'F',
+    level: 'advanced',
+    first: 'anki',
+    second: 'ttmik-textbook',
+    third: 'king-sejong',
+    reasonKo: '체계적 어휘·문법 총정리',
+    reasonEn: 'Comprehensive systematization of vocabulary and grammar',
+  },
+  {
+    type: 'E',
+    level: 'advanced',
+    first: 'teuida',
+    second: 'ttmik-podcast',
+    third: 'memrise',
+    reasonKo: '다채널 고급 맥락 노출, 실전 한국어 fluency',
+    reasonEn: 'Multi-channel advanced context exposure, practical Korean fluency',
+  },
+];
